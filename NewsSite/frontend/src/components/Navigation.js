@@ -43,8 +43,8 @@ const Navigation = () => {
           }}
         >
           <div className="container">
-            <div className="row align-items-center">
-              <div className="col-lg-3 col-md-3 d-none d-md-block">
+            <div className="row align-items-center justify-content-center">
+              <div className="col-lg-3 col-md-4 d-none d-md-block">
                 <div>
                   {/* <i className="fas fa-cloud-moon-rain me-2 fs-3 text-info"></i>{" "} weather will implement later */}
                   <strong>Kolkata, West Bengal</strong>
@@ -61,13 +61,13 @@ const Navigation = () => {
                   <FontAwesomeIcon icon={faInstagram} className="fs-5 me-2" />{" "}
                 </div>
               </div>
-              <div className="col-lg-6 col-md-6 text-center">
+              <div className="col-lg-6 col-md-4 text-center">
                 <div className="display-6">One Nation</div>
                 <div className="text-secondary">
                   {currentDateTime.format("dddd, MMM D, YYYY h:mm:ss A")}
                 </div>
               </div>
-              <div className="col-lg-3 col-md-3 text-end d-none d-md-block">
+              <div className="col-lg-3 col-md-4 text-end d-none d-md-block">
                 <input className="form-control" placeholder="Search" />
                 <div className="mt-2">
                   <strong>Trending :</strong> Big story tonight
