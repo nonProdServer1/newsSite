@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../App.css";
+import moment from "moment";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 {
   /* ******************************************************************************************************* */
@@ -19,26 +22,50 @@ import "../App.css";
 }
 
 const Navigation = () => {
+  const [currentDateTime, setCurrentDateTime] = useState(moment());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentDateTime(moment());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <div role="navigation">
-        <div className="p-3 bg-light">
+        <div
+          className="p-3 nav-head"
+          style={{
+            background:
+              "linear-gradient(90deg, #ff9933 33%, #FFFFFF 33%, #FFFFFF 67%, #138808 67%)",
+          }}
+        >
           <div className="container">
             <div className="row align-items-center">
               <div className="col-lg-3 col-md-3 d-none d-md-block">
                 <div>
-                  <i className="fas fa-cloud-moon-rain me-2 fs-3 text-info"></i>{" "}
-                  <strong>Bridgeport, CT</strong>
+                  {/* <i className="fas fa-cloud-moon-rain me-2 fs-3 text-info"></i>{" "} weather will implement later */}
+                  <strong>Kolkata, West Bengal</strong>
                 </div>
                 <div className="mt-1 text-secondary">
-                  <i className="fab fa-facebook-square fs-5 me-2"></i>
-                  <i className="fab fa-twitter-square fs-5 me-2"></i>
-                  <i className="fas fa-thumbtack fs-5 me-2"></i> Subscribe
+                  <FontAwesomeIcon
+                    icon={["fab", "facebook-square"]}
+                    className="fs-5 me-2"
+                  />
+                  <FontAwesomeIcon
+                    icon={["fab", "twitter-square"]}
+                    className="fs-5 me-2"
+                  />
+                  <FontAwesomeIcon icon={faInstagram} className="fs-5 me-2" />{" "}
                 </div>
               </div>
               <div className="col-lg-6 col-md-6 text-center">
-                <div className="display-6">DAILY NEWS</div>
-                <div className="text-secondary">Friday, Nov 18, 2022</div>
+                <div className="display-6">One Nation</div>
+                <div className="text-secondary">
+                  {currentDateTime.format("dddd, MMM D, YYYY h:mm:ss A")}
+                </div>
               </div>
               <div className="col-lg-3 col-md-3 text-end d-none d-md-block">
                 <input className="form-control" placeholder="Search" />
@@ -71,19 +98,19 @@ const Navigation = () => {
                     <a
                       className="nav-link mx-2 active"
                       aria-current="page"
-                      href="#"
+                      href="/"
                     >
-                      News
+                      Breaking News
                     </a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link mx-2" href="#">
-                      Current
+                      India
                     </a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link mx-2" href="#">
-                      Local
+                      World
                     </a>
                   </li>
                   <li className="nav-item">
@@ -93,7 +120,37 @@ const Navigation = () => {
                   </li>
                   <li className="nav-item">
                     <a className="nav-link mx-2" href="#">
-                      Classified
+                      State
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link mx-2" href="#">
+                      Tech
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link mx-2" href="#">
+                      Bollywood
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link mx-2" href="#">
+                      Movies/Series
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link mx-2" href="#">
+                      Education
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link mx-2" href="#">
+                      Results
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link mx-2" href="#" color="#FF0000">
+                      Covid
                     </a>
                   </li>
                   <li className="nav-item">
@@ -111,7 +168,7 @@ const Navigation = () => {
                       aria-haspopup="true"
                       aria-expanded="false"
                     >
-                      Company
+                      One Nation
                     </a>
                     <ul
                       className="dropdown-menu"
