@@ -39,7 +39,7 @@ const Navigation = () => {
           className="p-3 nav-head"
           style={{
             background:
-              "linear-gradient(90deg, #ff9933 33%, #FFFFFF 33%, #FFFFFF 67%, #138808 67%)",
+              "linear-gradient(90deg, #ff9933 0%, #FFFFFF 50%, #138808 100%)              ",
           }}
         >
           <div className="container">
