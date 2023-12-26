@@ -1,12 +1,5 @@
-import React, { useEffect, useState } from "react";
-import "../App.css";
-import moment from "moment";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+/* ******************************************************************************************************* */
 
-{
-  /* ******************************************************************************************************* */
-}
 // filename:
 
 // purpose:
@@ -16,10 +9,14 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 // modified-list:
 
 // developed-by:
+/* ******************************************************************************************************* */
 
-{
-  /* ******************************************************************************************************* */
-}
+
+import React, { useEffect, useState } from "react";
+import "../App.css";
+import moment from "moment";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const Navigation = () => {
   const [currentDateTime, setCurrentDateTime] = useState(moment());
